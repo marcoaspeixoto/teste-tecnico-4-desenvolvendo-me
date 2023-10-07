@@ -17,19 +17,16 @@ class MoviesController < ApplicationController
     # Ordenar os registros por ano de lançamento
     movies = Movie.order(:release_year)
 
-    # Aplicar filtros, se necessário
+   render json: movies
+  end
+
+  def filter_by_year
+    # Filtrar por ano de lançamento, se o parâmetro :year estiver presente
     if params[:year]
-      movies = movies.where(release_year: params[:year])
+      movies = Movie.where(release_year: params[:year])
+      render json: movies
+    else
+      render json: { message: 'Parâmetro :year não especificado.' }, status: :bad_request
     end
-
-    if params[:genre]
-      movies = movies.where('listed_in LIKE ?', "%#{params[:genre]}%")
-    end
-
-    if params[:country]
-      movies = movies.where(country: params[:country])
-    end
-
-    render json: movies
   end
 end
