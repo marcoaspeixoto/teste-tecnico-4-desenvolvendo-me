@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_10_07_033217) do
+ActiveRecord::Schema.define(version: 2023_10_07_172830) do
 
   create_table "movies", force: :cascade do |t|
     t.string "show_id"
-    t.string "type"
+    t.string "media_type"
     t.string "title"
     t.string "director"
     t.string "cast"
