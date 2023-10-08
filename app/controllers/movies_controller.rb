@@ -20,6 +20,11 @@ class MoviesController < ApplicationController
    render json: movies
   end
 
+  def show
+    movie = Movie.find(params[:id])
+    render json: movie
+  end
+
   def filter_by_year
     # Filtrar por ano de lançamento, se o parâmetro :year estiver presente
     if params[:year]
@@ -28,5 +33,17 @@ class MoviesController < ApplicationController
     else
       render json: { message: 'Parâmetro :year não especificado.' }, status: :bad_request
     end
+  end
+
+  def filter_by_media_type
+    # Filtra os filmes por tipo de mídia se o parâmetro 'media_type' estiver presente
+    if params[:media_type]
+      movies = Movie.where(media_type: params[:media_type])
+    else
+      # Se nenhum tipo de mídia for especificado, retorna todos os filmes
+      movies = Movie.all
+    end
+
+    render json: movies
   end
 end
