@@ -49,12 +49,12 @@ class MoviesController < ApplicationController
     render json: movies
   end
 
-  def filter_by_genre
-    # Filtra os filmes por gênero se o parâmetro 'genre' estiver presente
-    if params[:genre]
-      movies = Movie.where('listed_in LIKE ?', "%#{params[:genre]}%")
+  def filter_by_country
+    # Filtra os filmes por país se o parâmetro 'country' estiver presente
+    if params[:country]
+      movies = Movie.where('country LIKE ?', "%#{params[:country]}%")
     else
-      # Se nenhum gênero for especificado, retorna todos os filmes
+      # Se nenhum país for especificado, retorna todos os filmes
       movies = Movie.all
     end
 
