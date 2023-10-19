@@ -69,4 +69,10 @@ RSpec.configure do |config|
       with.library :rails
     end
   end
+
+  config.include FactoryBot::Syntax::Methods
+
+  config.before(:all) do
+    Faker::Config.locale = 'pt-BR'
+  end
 end
