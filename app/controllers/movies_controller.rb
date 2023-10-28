@@ -3,7 +3,7 @@ require 'csv'
 class MoviesController < ApplicationController
   def import_csv
     # Caminho para o arquivo CSV
-    csv_file_path = '/home/marco/Documentos/TT 4 - netflix_titles.csv'
+    csv_file_path = 'TT 4 - netflix_titles.csv'
 
     # Ler o CSV e criar registros no banco de dados
     CSV.foreach(csv_file_path, headers: true) do |row|
