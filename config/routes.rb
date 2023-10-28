@@ -1,3 +1,10 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :movies do
+    collection do
+      post 'import_csv' # Rota para importar o CSV
+      get 'filter_by_year', to: 'movies#filter_by_year' # Rota para filtrar por ano
+      get 'filter_by_media_type', to: 'movies#filter_by_media_type' # Rota para filtrar por tipo de mídia
+      get 'filter_by_country', to: 'movies#filter_by_country' # Rota para filtrar por país
+    end
+  end
 end
