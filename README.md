@@ -95,6 +95,7 @@ Dicas:
 <br>
 
 ## :page_facing_up: Documentação da API
+
 Acesse a documentação da API através do link:  
 https://documenter.getpostman.com/view/23703927/2s9YkrcLFz
 
