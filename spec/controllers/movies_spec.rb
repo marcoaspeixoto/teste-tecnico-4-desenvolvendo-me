@@ -14,7 +14,7 @@ RSpec.describe MoviesController, type: :controller do
       create(:movie, release_year: 2015)
       create(:movie, release_year: 2010)
 
-      get :index
+      get :sort_by_year
       expect(response).to have_http_status(:success)
       movies = JSON.parse(response.body)
       expect(movies.first['release_year']).to eq(2010)

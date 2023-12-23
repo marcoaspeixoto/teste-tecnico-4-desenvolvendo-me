@@ -3,7 +3,7 @@ require 'csv'
 class MoviesController < ApplicationController
   def import_csv
     # Caminho para o arquivo CSV
-    csv_file_path = 'TT 4 - netflix_titles.csv'
+    csv_file_path = Rails.root.join('TT 4 - netflix_titles.csv')
 
     # Ler o CSV e criar registros no banco de dados
     CSV.foreach(csv_file_path, headers: true) do |row|
@@ -13,11 +13,11 @@ class MoviesController < ApplicationController
     render json: { message: 'Dados importados com sucesso!' }
   end
 
-  def index
+  def sort_by_year
     # Ordenar os registros por ano de lançamento
     movies = Movie.order(:release_year)
 
-   render json: movies
+    render json: movies
   end
 
   def filter_by_year

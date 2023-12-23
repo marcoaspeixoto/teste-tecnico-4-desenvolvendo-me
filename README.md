@@ -94,6 +94,13 @@ Dicas:
 
 <br>
 
+## :page_facing_up: Documentação da API
+
+Acesse a documentação da API através do link:  
+https://documenter.getpostman.com/view/23703927/2s9YkrcLFz
+
+<br>
+
 ## :heavy_check_mark: Conclusão
 
 * **Student / Developer:** Marco Peixoto (https://github.com/marcoaspeixoto)
